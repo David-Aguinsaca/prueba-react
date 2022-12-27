@@ -11,7 +11,7 @@ function GifCard(props) {
             <Card border="light">
                 <ImagePersonalized url={props.url}></ImagePersonalized>
                 <Card.Body>
-                    <ButtonPersonalized variant="primary">Go somewhere</ButtonPersonalized>
+                    <ButtonPersonalized variant="primary" title = {"Eliminar"}></ButtonPersonalized>
                 </Card.Body>
             </Card>
         </>

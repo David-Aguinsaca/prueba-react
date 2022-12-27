@@ -1,14 +1,15 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 
-function InputPersonalized (){
-    return (
-        <Form.Control
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
-    );
+function InputPersonalized(props) {
+  return (
+    <Form.Control
+      placeholder="Gif Url"
+      value={props.value}
+      name={props.name}
+      onChange={props.handleChange}
+    />
+  );
 
 };
 

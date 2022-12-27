@@ -4,11 +4,15 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import ButtonPersonalized from '../atoms/button';
 import InputPersonalized from '../atoms/input';
 
-function TopBar() {
+function TopBar(props) {
     return <>
         <InputGroup className="mb-3">
-            <InputPersonalized></InputPersonalized>
-            <ButtonPersonalized></ButtonPersonalized>
+            <InputPersonalized
+                value={props.value}
+                name={props.name}
+                handleChange={props.handleChange}
+            ></InputPersonalized>
+            <ButtonPersonalized title={"Agregar"} createGif = {props.createGif}></ButtonPersonalized>
         </InputGroup>
     </>
 
