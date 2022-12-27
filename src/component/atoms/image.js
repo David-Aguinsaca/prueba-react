@@ -1,15 +1,11 @@
 
 import React from 'react';
-import Image from 'react-bootstrap/Image';
+import Card from 'react-bootstrap/Card';
 
 
-function ImagePersonalized() {
+function ImagePersonalized(props) {
     return (
-        <Image
-            src=
-            "https://media.geeksforgeeks.org/wp-content/uploads/20210425000233/test-300x297.png"
-            rounded
-        />
+        <Card.Img variant="top" src={props.url} />
     );
 }
 
