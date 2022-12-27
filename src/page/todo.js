@@ -73,7 +73,7 @@ function Todo() {
       .then(response => {
         const result = gifList.filter(data => data.id !== parseInt(id));
         console.log(result);
-        gifList(result);
+        /* gifList(result); */
       })
       .catch(error => {
         console.error('There was an error!', error);
