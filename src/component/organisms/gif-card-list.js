@@ -19,7 +19,9 @@ function GifCardList(props) {
         props.gifList.map((task) => (
           <GifCard
             key={task.id}
+            id={task.id}
             url={task.url}
+            onClick = {props.onClick}
           />
         )) : <h2>
           No posee Gif

@@ -5,7 +5,9 @@ import Button from 'react-bootstrap/Button';
 function ButtonPersonalized(props) {
     return (
         <Button variant="outline-secondary"
-            onClick={props.createGif}
+            onClick={props.onClick}
+            id={props.id}
+            data-url={props.data_url}
         >{props.title}</Button>
     );
 }

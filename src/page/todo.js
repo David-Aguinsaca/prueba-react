@@ -46,11 +46,38 @@ function Todo() {
     }
 
     axios.post("https://iyelrnlkoq7ra5mnxg5cobbkta0uubul.lambda-url.us-east-1.on.aws/", formValue)
-        .then((response) => {
-            console.log(response.data);
-            setGifList([...gifList, response.data]);
-            setFormValue(valueInitial);
-        });
+      .then((response) => {
+        console.log(response.data);
+        setGifList([...gifList, response.data]);
+        setFormValue(valueInitial);
+      }).catch((error) => {
+        alert('Url no valida');
+
+      });
+  }
+
+  const deleteGif = (event) => {
+    event.preventDefault();
+    let id = event.target.getAttribute("id");
+    let url = event.target.dataset.url;
+
+    /* "id": 2,
+    "url": "example.com",
+    "author_id": 1 */
+
+    axios.delete('https://iyelrnlkoq7ra5mnxg5cobbkta0uubul.lambda-url.us-east-1.on.aws/', {
+      "id": id,
+      "url": url,
+      "author_id": 1014
+    })
+      .then(response => {
+        const result = gifList.filter(data => data.id !== parseInt(id));
+        console.log(result);
+        gifList(result);
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
   }
 
 
@@ -63,11 +90,13 @@ function Todo() {
             value={formValue.url}
             name="url"
             handleChange={handleChange}
-            createGif={createGif}
+            onClick={createGif}
           ></TopBar>
         </Card.Header>
         <Card.Body>
-          <GifCardList gifList={gifList}></GifCardList>
+          <GifCardList
+            gifList={gifList}
+            onClick={deleteGif}></GifCardList>
         </Card.Body>
       </Card>
     </div>

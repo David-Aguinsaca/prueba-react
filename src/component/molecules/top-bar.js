@@ -12,7 +12,7 @@ function TopBar(props) {
                 name={props.name}
                 handleChange={props.handleChange}
             ></InputPersonalized>
-            <ButtonPersonalized title={"Agregar"} createGif = {props.createGif}></ButtonPersonalized>
+            <ButtonPersonalized title={"Agregar"} onClick = {props.onClick}></ButtonPersonalized>
         </InputGroup>
     </>
 
