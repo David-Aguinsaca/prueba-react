@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import ButtonPersonalized from './component/atoms/button';
+import Todo from './page/todo';
 
 function App() {
   return (
-    <ButtonPersonalized></ButtonPersonalized>
+    <Todo></Todo>
   );
 }
 
